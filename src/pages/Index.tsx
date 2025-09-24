@@ -90,9 +90,49 @@ export default function Index() {
     return () => clearInterval(timer);
   }, []);
 
+  // Эффект конфетти
+  const createConfetti = () => {
+    const colors = ['#FFD700', '#FF6B6B', '#4ECDC4', '#45B7D1', '#96CEB4', '#FFEAA7'];
+    const confettiContainer = document.createElement('div');
+    confettiContainer.style.position = 'fixed';
+    confettiContainer.style.top = '0';
+    confettiContainer.style.left = '0';
+    confettiContainer.style.width = '100vw';
+    confettiContainer.style.height = '100vh';
+    confettiContainer.style.pointerEvents = 'none';
+    confettiContainer.style.zIndex = '9999';
+    document.body.appendChild(confettiContainer);
+
+    for (let i = 0; i < 100; i++) {
+      const confetti = document.createElement('div');
+      const color = colors[Math.floor(Math.random() * colors.length)];
+      
+      confetti.style.position = 'absolute';
+      confetti.style.left = Math.random() * 100 + 'vw';
+      confetti.style.top = '-10px';
+      confetti.style.width = Math.random() * 10 + 5 + 'px';
+      confetti.style.height = confetti.style.width;
+      confetti.style.backgroundColor = color;
+      confetti.style.borderRadius = '50%';
+      confetti.style.animation = `confetti-fall ${Math.random() * 3 + 2}s linear forwards`;
+      confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
+      
+      confettiContainer.appendChild(confetti);
+    }
+
+    // Убираем конфетти через 5 секунд
+    setTimeout(() => {
+      document.body.removeChild(confettiContainer);
+    }, 5000);
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitted(true);
+    
+    // Запускаем конфетти
+    createConfetti();
+    
     setTimeout(() => {
       window.open('https://infowawada.com/?promo=0e4cb864-e734-44ef-9820-29068cfbffac&target=register', '_blank');
       setIsSubmitted(false);
