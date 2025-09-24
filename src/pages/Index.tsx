@@ -41,12 +41,21 @@ export default function Index() {
       oscillator.stop(audioContext.currentTime + 0.3);
     };
     
-    // Воспроизводим звук каждые 5 секунд (имитируя новые выигрыши)
+    // Вибрация на мобильных устройствах
+    const playVibration = () => {
+      if ('vibrate' in navigator) {
+        // Паттерн вибрации: короткая-пауза-короткая (имитация монеток)
+        navigator.vibrate([100, 50, 100]);
+      }
+    };
+
+    // Воспроизводим звук и вибрацию каждые 5 секунд (имитируя новые выигрыши)
     const winSoundTimer = setInterval(() => {
       try {
         playWinSound();
+        playVibration();
       } catch (error) {
-        console.log('Audio not supported');
+        console.log('Audio/Vibration not supported');
       }
     }, 5000);
     
