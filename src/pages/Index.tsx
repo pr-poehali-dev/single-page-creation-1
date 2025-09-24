@@ -236,18 +236,18 @@ export default function Index() {
         </div>
 
         {/* Second Character */}
-        <div className="absolute bottom-10 right-10 hidden lg:block">
+        <div className="absolute top-20 right-20 hidden lg:block">
           <img 
             src="/img/a13acd2c-67fd-4a7c-a7a3-a49a3b4a11f6.jpg" 
             alt="Casino Dealer" 
-            className="w-64 h-64 object-cover rounded-full animate-float border-4 border-gaming-neon-pink"
+            className="w-48 h-48 object-cover rounded-full animate-float border-4 border-gaming-neon-pink opacity-80"
             style={{ animationDelay: '1s' }}
           />
           <div className="absolute -bottom-2 -left-2 animate-float">
-            <span className="text-4xl">♠️</span>
+            <span className="text-3xl">♠️</span>
           </div>
           <div className="absolute -top-2 -right-2 animate-float" style={{ animationDelay: '0.5s' }}>
-            <span className="text-4xl">❤️</span>
+            <span className="text-3xl">❤️</span>
           </div>
         </div>
       </div>
