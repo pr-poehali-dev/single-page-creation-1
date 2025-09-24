@@ -52,7 +52,7 @@ export default function Index() {
       <header className="relative z-10 flex justify-between items-center p-6">
         <div className="text-2xl font-bold text-primary animate-pulse-neon">
           VAVADA
-          <span className="text-sm text-muted-foreground ml-2">THE SMARTER WAY TO BET</span>
+          <span className="text-sm text-muted-foreground ml-2">Casino</span>
         </div>
         <div className="flex gap-4">
           <Icon name="Phone" size={24} className="text-gaming-gold" />
