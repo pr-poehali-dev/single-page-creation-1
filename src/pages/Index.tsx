@@ -212,7 +212,7 @@ export default function Index() {
 
                 <Button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-gaming-gold to-gaming-gold-bright text-black font-black text-base md:text-lg py-4 md:py-6 hover:scale-105 transition-transform animate-glow"
+                  className="w-full bg-gradient-to-r from-gaming-gold to-gaming-gold-bright text-black font-black text-base md:text-lg py-4 md:py-6 hover:scale-105 transition-transform animate-glow animate-pulse"
                   disabled={isSubmitted}
                 >
                   {isSubmitted ? (
