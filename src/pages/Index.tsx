@@ -73,7 +73,7 @@ export default function Index() {
               <img 
                 src="/img/08d23deb-6f84-4ada-b4ac-7381bf04c2a1.jpg" 
                 alt="Casino Dealer" 
-                className="w-96 h-80 object-cover rounded-2xl animate-glow"
+                className="w-64 h-96 object-cover rounded-2xl animate-glow"
               />
               <div className="absolute -top-4 -right-4 animate-float">
                 <Icon name="Crown" size={48} className="text-gaming-gold" />
