@@ -247,14 +247,28 @@ export default function Index() {
                     </div>
                   </div>
                   
-                  {/* Счетчик посетителей */}
-                  <div className="bg-gaming-dark-card border border-gaming-gold rounded-lg p-3 animate-pulse">
-                    <div className="flex items-center justify-center gap-2 text-gaming-gold-bright">
-                      <span className="animate-bounce">👥</span>
-                      <span className="font-bold text-sm md:text-base">
-                        Сегодня зарегистрировались уже <span className="text-gaming-gold-bright text-lg font-black animate-pulse">147</span> человек!
-                      </span>
-                      <span className="animate-bounce delay-300">🔥</span>
+                  {/* Счетчик посетителей и успехи */}
+                  <div className="space-y-3">
+                    <div className="bg-gaming-dark-card border border-gaming-gold rounded-lg p-3 animate-pulse">
+                      <div className="flex items-center justify-center gap-2 text-gaming-gold-bright">
+                        <span className="animate-bounce">👥</span>
+                        <span className="font-bold text-sm md:text-base">
+                          Сегодня зарегистрировались уже <span className="text-gaming-gold-bright text-lg font-black animate-pulse">147</span> человек!
+                        </span>
+                        <span className="animate-bounce delay-300">🔥</span>
+                      </div>
+                    </div>
+                    
+                    {/* Истории успеха */}
+                    <div className="bg-gradient-to-r from-gaming-gold to-gaming-gold-bright text-black p-3 rounded-lg animate-glow">
+                      <div className="text-center">
+                        <div className="font-black text-sm md:text-base mb-1">
+                          🏆 ИЗ НИХ УЖЕ 5 ЧЕЛОВЕК ВЫИГРАЛИ БОЛЕЕ 500,000₽! 🏆
+                        </div>
+                        <div className="text-xs md:text-sm font-bold opacity-90">
+                          Последний выигрыш: 847,230₽ — 23 минуты назад 💸
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
