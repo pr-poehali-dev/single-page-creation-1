@@ -61,6 +61,16 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				gaming: {
+					'red': '#dc2626',
+					'red-bright': '#ef4444', 
+					'gold': '#fbbf24',
+					'gold-bright': '#fde047',
+					'neon-pink': '#ec4899',
+					'neon-cyan': '#06b6d4',
+					'dark': '#1a1a1a',
+					'dark-card': '#262626'
 				}
 			},
 			borderRadius: {
@@ -84,11 +94,26 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'float': {
+					'0%, 100%': { transform: 'translateY(0px)' },
+					'50%': { transform: 'translateY(-20px)' }
+				},
+				'glow': {
+					'0%, 100%': { boxShadow: '0 0 20px rgba(236, 72, 153, 0.5)' },
+					'50%': { boxShadow: '0 0 40px rgba(236, 72, 153, 1)' }
+				},
+				'pulse-neon': {
+					'0%, 100%': { textShadow: '0 0 5px #ec4899, 0 0 10px #ec4899' },
+					'50%': { textShadow: '0 0 10px #ec4899, 0 0 20px #ec4899, 0 0 30px #ec4899' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'float': 'float 3s ease-in-out infinite',
+				'glow': 'glow 2s ease-in-out infinite',
+				'pulse-neon': 'pulse-neon 2s ease-in-out infinite'
 			}
 		}
 	},
