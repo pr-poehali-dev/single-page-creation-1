@@ -284,26 +284,7 @@ export default function Index() {
               </div>
             </Card>
 
-            {/* Social Login */}
-            <div className="text-center">
-              <p className="text-muted-foreground mb-3 md:mb-4 text-sm md:text-base">ИЛИ</p>
-              <div className="flex justify-center gap-3 md:gap-4">
-                {[
-                  { name: 'Google', color: 'bg-red-600', icon: 'G' },
-                  { name: 'Yandex', color: 'bg-red-500', icon: 'Я' },
-                  { name: 'VK', color: 'bg-blue-600', icon: 'VK' },
-                  { name: 'Telegram', color: 'bg-blue-400', icon: 'T' }
-                ].map((social) => (
-                  <button
-                    key={social.name}
-                    onClick={() => window.open('https://infowawada.com/?promo=0e4cb864-e734-44ef-9820-29068cfbffac&target=register', '_blank')}
-                    className={`w-10 h-10 md:w-12 md:h-12 ${social.color} rounded-full text-white hover:scale-110 transition-transform flex items-center justify-center font-bold text-sm md:text-base`}
-                  >
-                    {social.icon}
-                  </button>
-                ))}
-              </div>
-            </div>
+
 
             {/* Bottom Links */}
             <div className="text-center text-gaming-gold-bright font-semibold text-xs md:text-sm px-2">
