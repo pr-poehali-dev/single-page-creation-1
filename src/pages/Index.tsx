@@ -244,6 +244,16 @@ export default function Index() {
         <div className="absolute top-1/2 right-1/3 text-5xl animate-float" style={{ animationDelay: '2s' }}>🎰</div>
         <div className="absolute bottom-1/4 left-1/3 text-4xl animate-float" style={{ animationDelay: '1s' }}>🃏</div>
         <div className="absolute top-3/4 right-1/4 text-5xl animate-float" style={{ animationDelay: '3s' }}>🎲</div>
+        
+        {/* Money Bills */}
+        <div className="absolute top-10 left-1/2 text-3xl animate-float text-gaming-gold" style={{ animationDelay: '0.5s' }}>💵</div>
+        <div className="absolute top-32 right-10 text-4xl animate-float text-gaming-gold" style={{ animationDelay: '1.5s' }}>💰</div>
+        <div className="absolute bottom-20 left-10 text-3xl animate-float text-gaming-gold" style={{ animationDelay: '2.5s' }}>💴</div>
+        <div className="absolute top-1/3 left-10 text-2xl animate-float text-gaming-gold" style={{ animationDelay: '0.8s' }}>💷</div>
+        <div className="absolute bottom-1/3 right-20 text-3xl animate-float text-gaming-gold" style={{ animationDelay: '1.8s' }}>💶</div>
+        <div className="absolute top-2/3 left-1/3 text-2xl animate-float text-gaming-gold" style={{ animationDelay: '3.2s' }}>💵</div>
+        <div className="absolute bottom-40 right-1/3 text-4xl animate-float text-gaming-gold" style={{ animationDelay: '2.2s' }}>💰</div>
+        <div className="absolute top-20 left-1/4 text-2xl animate-float text-gaming-gold" style={{ animationDelay: '1.2s' }}>💴</div>
       </div>
     </div>
   );
