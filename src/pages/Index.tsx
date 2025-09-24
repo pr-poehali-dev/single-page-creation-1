@@ -55,7 +55,7 @@ export default function Index() {
       <header className="relative z-10 flex justify-between items-center p-6">
         <div className="text-2xl font-bold text-primary animate-pulse-neon">
           VAVADA
-          <span className="text-sm text-muted-foreground ml-2">Твой шанс на миллион!</span>
+          <span className="text-sm text-muted-foreground ml-2">Casino</span>
         </div>
         <div className="flex gap-4">
           <Icon name="Phone" size={24} className="text-gaming-gold" />
@@ -82,7 +82,7 @@ export default function Index() {
               {/* Speech Bubble */}
               <div className="absolute -top-20 -right-20 bg-white text-black px-4 py-3 rounded-2xl rounded-bl-none shadow-xl animate-pulse border-2 border-gaming-gold max-w-xs">
                 <p className="text-sm font-bold text-center">
-                  Не теряй возможность поднять кеш! 💰
+                  Твой шанс на миллион! 💰
                 </p>
                 <div className="absolute bottom-0 left-4 w-0 h-0 border-l-8 border-l-transparent border-r-8 border-r-transparent border-t-8 border-t-white"></div>
               </div>
