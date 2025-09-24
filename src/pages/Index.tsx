@@ -184,6 +184,17 @@ export default function Index() {
                       Жми кнопку и начинай выигрывать прямо сейчас!
                     </p>
                   </div>
+                  
+                  {/* Счетчик посетителей */}
+                  <div className="bg-gaming-dark-card border border-gaming-gold rounded-lg p-3 animate-pulse">
+                    <div className="flex items-center justify-center gap-2 text-gaming-gold-bright">
+                      <span className="animate-bounce">👥</span>
+                      <span className="font-bold text-sm md:text-base">
+                        Сегодня зарегистрировались уже <span className="text-gaming-gold-bright text-lg font-black animate-pulse">147</span> человек!
+                      </span>
+                      <span className="animate-bounce delay-300">🔥</span>
+                    </div>
+                  </div>
                 </div>
 
                 <Button
