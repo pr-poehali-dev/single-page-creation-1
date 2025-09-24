@@ -120,9 +120,17 @@ export default function Index() {
                     {/* Анимированный призыв */}
                     <div className="relative">
                       <div className="animate-bounce">
-                        <div className="bg-gaming-gold-bright text-black px-4 py-2 rounded-full font-bold text-sm md:text-base shadow-lg animate-pulse">
+                        <button 
+                          onClick={() => {
+                            const form = document.querySelector('form');
+                            if (form) {
+                              form.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                            }
+                          }}
+                          className="bg-gaming-gold-bright text-black px-4 py-2 rounded-full font-bold text-sm md:text-base shadow-lg animate-pulse hover:scale-110 transition-transform cursor-pointer"
+                        >
                           👆 ЗАБРАТЬ БОНУС СЕЙЧАС! 👆
-                        </div>
+                        </button>
                       </div>
                       
                       {/* Стрелки указывающие на форму */}
@@ -139,7 +147,7 @@ export default function Index() {
 
             {/* Registration Form */}
             <Card className="bg-card border-border p-4 md:p-6">
-              <form onSubmit={handleSubmit} className="space-y-3 md:space-y-4">
+              <form id="bonus-form" onSubmit={handleSubmit} className="space-y-3 md:space-y-4">
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <Input
