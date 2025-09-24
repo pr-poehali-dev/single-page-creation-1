@@ -147,88 +147,47 @@ export default function Index() {
 
             {/* Registration Form */}
             <Card className="bg-card border-border p-4 md:p-6">
-              <form id="bonus-form" onSubmit={handleSubmit} className="space-y-3 md:space-y-4">
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <Input
-                      placeholder="ИМЯ"
-                      value={formData.firstName}
-                      onChange={(e) => handleInputChange('firstName', e.target.value)}
-                      className="bg-input border-border text-foreground placeholder:text-muted-foreground"
-                    />
-                  </div>
-                  <div>
-                    <Input
-                      placeholder="ФАМИЛИЯ"
-                      value={formData.lastName}
-                      onChange={(e) => handleInputChange('lastName', e.target.value)}
-                      className="bg-input border-border text-foreground placeholder:text-muted-foreground"
-                    />
-                  </div>
-                </div>
+              <div id="bonus-form" className="space-y-4 md:space-y-6 text-center">
                 
-                <Input
-                  type="email"
-                  placeholder="ЭЛЕКТРОННАЯ ПОЧТА"
-                  value={formData.email}
-                  onChange={(e) => handleInputChange('email', e.target.value)}
-                  className="bg-input border-border text-foreground placeholder:text-muted-foreground"
-                />
-                
-                <div className="flex gap-2">
-                  <div className="flex items-center gap-2 bg-input px-3 rounded border border-border">
-                    <span className="text-2xl">🇷🇺</span>
-                    <span className="text-muted-foreground">+7</span>
+                {/* Мотивационный блок */}
+                <div className="space-y-4">
+                  <div className="text-center">
+                    <h3 className="text-2xl md:text-3xl font-bold text-gaming-gold-bright mb-4 animate-pulse">
+                      🎯 ТВОЙ ШАНС НА УДАЧУ! 🎯
+                    </h3>
+                    <div className="space-y-3 text-foreground">
+                      <div className="flex items-center justify-center gap-3 text-lg md:text-xl">
+                        <span>💰</span>
+                        <span className="font-semibold">До 1000$ бонус на первый депозит</span>
+                        <span>💰</span>
+                      </div>
+                      <div className="flex items-center justify-center gap-3 text-lg md:text-xl">
+                        <span>🎰</span>
+                        <span className="font-semibold">100 бесплатных вращений</span>
+                        <span>🎰</span>
+                      </div>
+                      <div className="flex items-center justify-center gap-3 text-lg md:text-xl">
+                        <span>⚡</span>
+                        <span className="font-semibold">Мгновенная регистрация</span>
+                        <span>⚡</span>
+                      </div>
+                    </div>
                   </div>
-                  <Input
-                    placeholder="ВАШ НОМЕР ТЕЛЕФОНА"
-                    value={formData.phone}
-                    onChange={(e) => handleInputChange('phone', e.target.value)}
-                    className="flex-1 bg-input border-border text-foreground placeholder:text-muted-foreground"
-                  />
-                </div>
-
-                <div>
-                  <p className="text-foreground font-semibold mb-2">ВАЛЮТА</p>
-                  <div className="grid grid-cols-4 gap-2">
-                    {[
-                      { code: 'USD', symbol: '$' },
-                      { code: 'EUR', symbol: '€' },
-                      { code: 'GBP', symbol: '£' },
-                      { code: 'CNY', symbol: '¥' }
-                    ].map((currency) => (
-                      <button
-                        key={currency.code}
-                        type="button"
-                        onClick={() => handleInputChange('currency', currency.code)}
-                        className={`p-2 rounded border text-center font-semibold transition-all ${
-                          formData.currency === currency.code
-                            ? 'bg-primary text-primary-foreground border-primary'
-                            : 'bg-input text-muted-foreground border-border hover:border-primary'
-                        }`}
-                      >
-                        {currency.symbol} {currency.code}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-
-                <div>
-                  <p className="text-foreground font-semibold mb-2">ПРОМОКОД:</p>
-                  <div className="flex gap-2">
-                    <Input
-                      value={formData.promoCode}
-                      onChange={(e) => handleInputChange('promoCode', e.target.value)}
-                      className="bg-input border-border text-foreground font-bold"
-                    />
-                    <Badge variant="secondary" className="px-4 py-2 text-gaming-gold-bright bg-gaming-dark-card">
-                      CLV3000
-                    </Badge>
+                  
+                  {/* Призыв к действию */}
+                  <div className="bg-gradient-to-r from-gaming-red-bright to-primary p-4 rounded-xl border-2 border-gaming-gold animate-glow">
+                    <p className="text-white font-bold text-lg md:text-xl mb-2">
+                      🔥 ОГРАНИЧЕННОЕ ВРЕМЯ! 🔥
+                    </p>
+                    <p className="text-gaming-gold-bright font-semibold text-base md:text-lg">
+                      Не упусти свой шанс стать миллионером!<br/>
+                      Жми кнопку и начинай выигрывать прямо сейчас!
+                    </p>
                   </div>
                 </div>
 
                 <Button
-                  type="submit"
+                  onClick={handleSubmit}
                   className="w-full bg-gradient-to-r from-gaming-gold to-gaming-gold-bright text-black font-black text-base md:text-lg py-4 md:py-6 hover:scale-105 transition-transform animate-glow animate-pulse"
                   disabled={isSubmitted}
                 >
