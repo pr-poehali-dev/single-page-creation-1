@@ -183,22 +183,61 @@ export default function Index() {
           {/* Left Side - Characters */}
           <div className="relative flex justify-center items-center order-1 lg:order-1">
             <div className="relative">
+              
+              {/* Декоративные элементы вокруг девушки */}
+              <div className="absolute -top-8 -left-8 animate-spin-slow">
+                <Icon name="Coins" size={40} className="text-gaming-gold opacity-80 animate-pulse" />
+              </div>
+              <div className="absolute -top-6 left-20 animate-bounce" style={{ animationDelay: '0.5s' }}>
+                <span className="text-2xl">💎</span>
+              </div>
+              <div className="absolute top-10 -left-12 animate-float" style={{ animationDelay: '1s' }}>
+                <Icon name="Gem" size={36} className="text-gaming-neon-pink opacity-70" />
+              </div>
+              <div className="absolute top-32 -right-10 animate-spin-slow" style={{ animationDelay: '2s' }}>
+                <span className="text-3xl animate-pulse">🎰</span>
+              </div>
+              <div className="absolute bottom-20 -left-10 animate-bounce" style={{ animationDelay: '1.5s' }}>
+                <span className="text-2xl">💸</span>
+              </div>
+              <div className="absolute bottom-10 left-16 animate-float" style={{ animationDelay: '0.8s' }}>
+                <Icon name="Sparkles" size={32} className="text-gaming-gold-bright opacity-80 animate-pulse" />
+              </div>
+              <div className="absolute -bottom-8 -right-8 animate-spin-slow" style={{ animationDelay: '3s' }}>
+                <Icon name="Trophy" size={38} className="text-gaming-gold animate-glow" />
+              </div>
+              <div className="absolute bottom-32 right-20 animate-bounce" style={{ animationDelay: '2.5s' }}>
+                <span className="text-2xl">🍀</span>
+              </div>
+              
+              {/* Основное изображение */}
               <img 
                 src="/img/9f7ab38c-817b-4c3a-9ced-045ca7d31a0a.jpg" 
                 alt="Casino Dealer" 
-                className="w-48 h-72 md:w-64 md:h-96 object-cover rounded-2xl animate-glow"
+                className="w-48 h-72 md:w-64 md:h-96 object-cover rounded-2xl animate-glow relative z-10"
               />
-              <div className="absolute -top-2 -right-2 md:-top-4 md:-right-4 animate-float">
+              
+              {/* Корона */}
+              <div className="absolute -top-2 -right-2 md:-top-4 md:-right-4 animate-float z-20">
                 <Icon name="Crown" size={32} className="text-gaming-gold md:w-12 md:h-12" />
               </div>
               
               {/* Speech Bubble */}
-              <div className="absolute -top-16 -right-16 md:-top-20 md:-right-20 bg-white text-black px-3 py-2 md:px-4 md:py-3 rounded-2xl rounded-bl-none shadow-xl animate-pulse border-2 border-gaming-gold max-w-xs">
+              <div className="absolute -top-16 -right-16 md:-top-20 md:-right-20 bg-white text-black px-3 py-2 md:px-4 md:py-3 rounded-2xl rounded-bl-none shadow-xl animate-pulse border-2 border-gaming-gold max-w-xs z-20">
                 <p className="text-xs md:text-sm font-bold text-center">
                   Твой шанс на миллион! 💰
                 </p>
                 <div className="absolute bottom-0 left-3 md:left-4 w-0 h-0 border-l-6 md:border-l-8 border-l-transparent border-r-6 md:border-r-8 border-r-transparent border-t-6 md:border-t-8 border-t-white"></div>
               </div>
+              
+              {/* Дополнительные эффекты */}
+              <div className="absolute top-4 right-4 animate-ping">
+                <div className="w-4 h-4 bg-gaming-gold rounded-full opacity-75"></div>
+              </div>
+              <div className="absolute bottom-4 left-4 animate-ping" style={{ animationDelay: '1s' }}>
+                <div className="w-3 h-3 bg-gaming-neon-cyan rounded-full opacity-60"></div>
+              </div>
+              
             </div>
           </div>
 

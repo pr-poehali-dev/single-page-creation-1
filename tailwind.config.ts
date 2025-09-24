@@ -106,6 +106,10 @@ export default {
 				'pulse-neon': {
 					'0%, 100%': { textShadow: '0 0 5px #ec4899, 0 0 10px #ec4899' },
 					'50%': { textShadow: '0 0 10px #ec4899, 0 0 20px #ec4899, 0 0 30px #ec4899' }
+				},
+				'spin-slow': {
+					'from': { transform: 'rotate(0deg)' },
+					'to': { transform: 'rotate(360deg)' }
 				}
 			},
 			animation: {
@@ -113,7 +117,8 @@ export default {
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'float': 'float 3s ease-in-out infinite',
 				'glow': 'glow 2s ease-in-out infinite',
-				'pulse-neon': 'pulse-neon 2s ease-in-out infinite'
+				'pulse-neon': 'pulse-neon 2s ease-in-out infinite',
+				'spin-slow': 'spin-slow 4s linear infinite'
 			}
 		}
 	},
