@@ -104,9 +104,25 @@ export default function Index() {
                         <div key={i} className="w-2 h-2 md:w-3 md:h-3 bg-gaming-gold-bright rounded-full animate-pulse" />
                       ))}
                     </div>
-                    <h2 className="text-3xl md:text-5xl font-black text-gaming-gold-bright tracking-widest">
+                    <h2 className="text-3xl md:text-5xl font-black text-gaming-gold-bright tracking-widest mb-3">
                       БОНУС <span className="text-2xl md:text-4xl">ДО</span> 1000$
                     </h2>
+                    
+                    {/* Анимированный призыв */}
+                    <div className="relative">
+                      <div className="animate-bounce">
+                        <div className="bg-gaming-gold-bright text-black px-4 py-2 rounded-full font-bold text-sm md:text-base shadow-lg animate-pulse">
+                          👆 ЗАБРАТЬ БОНУС СЕЙЧАС! 👆
+                        </div>
+                      </div>
+                      
+                      {/* Стрелки указывающие на форму */}
+                      <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce delay-300">
+                        <div className="text-gaming-gold-bright text-2xl animate-pulse">
+                          ↓
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </Card>
               </div>
