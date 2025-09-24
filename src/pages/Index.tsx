@@ -71,8 +71,8 @@ export default function Index() {
           <div className="relative flex justify-center items-center">
             <div className="relative">
               <img 
-                src="/img/908d1700-f960-4b4e-9b1e-b1bcff321946.jpg" 
-                alt="Gaming Character" 
+                src="/img/a13acd2c-67fd-4a7c-a7a3-a49a3b4a11f6.jpg" 
+                alt="Casino Dealer" 
                 className="w-80 h-80 object-cover rounded-full animate-glow"
               />
               <div className="absolute -top-4 -right-4 animate-float">
@@ -238,16 +238,16 @@ export default function Index() {
         {/* Second Character */}
         <div className="absolute top-20 left-20 hidden lg:block">
           <img 
-            src="/img/a13acd2c-67fd-4a7c-a7a3-a49a3b4a11f6.jpg" 
-            alt="Casino Dealer" 
-            className="w-48 h-48 object-cover rounded-full animate-float border-4 border-gaming-neon-pink opacity-80"
+            src="/img/908d1700-f960-4b4e-9b1e-b1bcff321946.jpg" 
+            alt="Gaming Pirate" 
+            className="w-48 h-48 object-cover rounded-full animate-float border-4 border-gaming-gold opacity-80"
             style={{ animationDelay: '1s' }}
           />
           <div className="absolute -bottom-2 -left-2 animate-float">
-            <span className="text-3xl">♠️</span>
+            <Icon name="Coins" size={32} className="text-gaming-gold" />
           </div>
           <div className="absolute -top-2 -right-2 animate-float" style={{ animationDelay: '0.5s' }}>
-            <span className="text-3xl">❤️</span>
+            <Icon name="Crown" size={32} className="text-gaming-gold" />
           </div>
         </div>
       </div>
