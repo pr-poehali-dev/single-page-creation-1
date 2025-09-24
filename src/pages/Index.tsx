@@ -129,6 +129,69 @@ export default function Index() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
+    // Играем специальный звук кнопки
+    try {
+      const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();
+      
+      // Звук "ка-чинг" (звук денег)
+      const playKachingSound = () => {
+        // Первый звук - высокий "динь"
+        const oscillator1 = audioContext.createOscillator();
+        const gainNode1 = audioContext.createGain();
+        
+        oscillator1.connect(gainNode1);
+        gainNode1.connect(audioContext.destination);
+        
+        oscillator1.frequency.setValueAtTime(800, audioContext.currentTime);
+        gainNode1.gain.setValueAtTime(0.3, audioContext.currentTime);
+        gainNode1.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.3);
+        
+        oscillator1.start(audioContext.currentTime);
+        oscillator1.stop(audioContext.currentTime + 0.3);
+        
+        // Второй звук - средний "динь" (с задержкой)
+        setTimeout(() => {
+          const oscillator2 = audioContext.createOscillator();
+          const gainNode2 = audioContext.createGain();
+          
+          oscillator2.connect(gainNode2);
+          gainNode2.connect(audioContext.destination);
+          
+          oscillator2.frequency.setValueAtTime(600, audioContext.currentTime);
+          gainNode2.gain.setValueAtTime(0.3, audioContext.currentTime);
+          gainNode2.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.4);
+          
+          oscillator2.start(audioContext.currentTime);
+          oscillator2.stop(audioContext.currentTime + 0.4);
+        }, 100);
+        
+        // Третий звук - низкий "динь" (финальный)
+        setTimeout(() => {
+          const oscillator3 = audioContext.createOscillator();
+          const gainNode3 = audioContext.createGain();
+          
+          oscillator3.connect(gainNode3);
+          gainNode3.connect(audioContext.destination);
+          
+          oscillator3.frequency.setValueAtTime(400, audioContext.currentTime);
+          gainNode3.gain.setValueAtTime(0.4, audioContext.currentTime);
+          gainNode3.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.6);
+          
+          oscillator3.start(audioContext.currentTime);
+          oscillator3.stop(audioContext.currentTime + 0.6);
+        }, 200);
+      };
+      
+      playKachingSound();
+      
+      // Тактильная вибрация
+      if ('vibrate' in navigator) {
+        navigator.vibrate([200, 100, 200, 100, 300]);
+      }
+    } catch (error) {
+      console.log('Audio not supported');
+    }
+    
     // Запускаем конфетти
     createConfetti();
     
