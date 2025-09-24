@@ -20,6 +20,42 @@ export default function Index() {
   // Таймер обратного отсчета
   const [timeLeft, setTimeLeft] = useState({ hours: 2, minutes: 45, seconds: 17 });
   
+  // Состояние для модального окна
+  const [showExitModal, setShowExitModal] = useState(false);
+
+  // Exit Intent - всплывающее окно при попытке покинуть страницу
+  useEffect(() => {
+    let mouseLeaveTimer: NodeJS.Timeout;
+    
+    const handleMouseLeave = (e: MouseEvent) => {
+      // Если курсор движется к верхней части экрана (закрытие вкладки/браузера)
+      if (e.clientY <= 10 && !showExitModal) {
+        setShowExitModal(true);
+      }
+    };
+
+    // Обработчик beforeunload для мобильных и других случаев
+    const handleBeforeUnload = (e: BeforeUnloadEvent) => {
+      if (!showExitModal) {
+        e.preventDefault();
+        e.returnValue = 'Подождите! У нас есть эксклюзивное предложение специально для вас!';
+        setShowExitModal(true);
+        return 'Подождите! У нас есть эксклюзивное предложение специально для вас!';
+      }
+    };
+
+    document.addEventListener('mouseleave', handleMouseLeave);
+    window.addEventListener('beforeunload', handleBeforeUnload);
+
+    return () => {
+      document.removeEventListener('mouseleave', handleMouseLeave);
+      window.removeEventListener('beforeunload', handleBeforeUnload);
+      if (mouseLeaveTimer) {
+        clearTimeout(mouseLeaveTimer);
+      }
+    };
+  }, [showExitModal]);
+
   // Звуковые уведомления для выигрышей
   useEffect(() => {
     const playWinSound = () => {
@@ -570,6 +606,98 @@ export default function Index() {
         <div className="absolute bottom-40 right-1/3 text-4xl animate-float text-gaming-gold" style={{ animationDelay: '2.2s' }}>💰</div>
         <div className="absolute top-20 left-1/4 text-2xl animate-float text-gaming-gold" style={{ animationDelay: '1.2s' }}>💴</div>
       </div>
+
+      {/* Exit Intent Modal */}
+      {showExitModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm animate-in fade-in duration-300">
+          <div className="relative bg-gradient-to-b from-gaming-red-bright to-gaming-red p-6 md:p-8 rounded-3xl border-4 border-gaming-gold-bright shadow-2xl animate-in zoom-in duration-500 max-w-md mx-4">
+            
+            {/* Закрыть крестик */}
+            <button
+              onClick={() => setShowExitModal(false)}
+              className="absolute top-3 right-3 text-white hover:text-gaming-gold-bright transition-colors text-2xl font-bold"
+            >
+              ✕
+            </button>
+
+            {/* Анимированная иконка */}
+            <div className="text-center mb-4">
+              <div className="text-6xl animate-bounce mb-2">🛑</div>
+              <h2 className="text-2xl md:text-3xl font-black text-gaming-gold-bright mb-2 animate-pulse">
+                СТОП!
+              </h2>
+              <h3 className="text-lg md:text-xl font-bold text-white mb-4">
+                НЕ УПУСТИ СВОЙ ШАНС!
+              </h3>
+            </div>
+
+            {/* Спеиальное предложение */}
+            <div className="bg-gradient-to-r from-gaming-gold-bright to-gaming-gold text-black p-4 rounded-2xl mb-4 animate-glow">
+              <div className="text-center">
+                <div className="text-xl md:text-2xl font-black mb-2">
+                  🎁 ЭКСКЛЮЗИВНО ДЛЯ ТЕБЯ! 🎁
+                </div>
+                <div className="text-lg font-bold mb-2">
+                  БОНУС + 500$ ДОПОЛНИТЕЛЬНО!
+                </div>
+                <div className="text-sm font-semibold">
+                  + 150 БЕСПЛАТНЫХ ВРАЩЕНИЙ
+                </div>
+              </div>
+            </div>
+
+            {/* Ургентность */}
+            <div className="bg-black/50 text-gaming-gold-bright p-3 rounded-xl mb-4 border border-gaming-gold">
+              <div className="text-center text-sm font-bold">
+                ⚡ Это предложение действует только СЕГОДНЯ! ⚡
+                <br/>
+                <span className="text-gaming-red-bright animate-pulse">
+                  Осталось всего {timeLeft.hours}ч {timeLeft.minutes}м {timeLeft.seconds}с
+                </span>
+              </div>
+            </div>
+
+            {/* Истории успеха */}
+            <div className="bg-gaming-dark-card border border-gaming-gold rounded-lg p-3 mb-4">
+              <div className="text-gaming-gold-bright text-xs text-center animate-pulse">
+                🏆 Дмитрий из Москвы только что выиграл 1,200,000₽!
+                <br/>
+                🏆 Анна из СПб забрала 890,450₽!
+              </div>
+            </div>
+
+            {/* Кнопки действий */}
+            <div className="space-y-3">
+              <Button
+                onClick={() => {
+                  setShowExitModal(false);
+                  window.open('https://infowawada.com/?promo=0e4cb864-e734-44ef-9820-29068cfbffac&target=register', '_blank');
+                }}
+                className="w-full bg-gradient-to-r from-gaming-gold-bright to-gaming-gold text-black font-black text-lg py-4 animate-pulse hover:scale-105 transition-transform"
+              >
+                <div className="flex items-center justify-center gap-2">
+                  <span>🚀</span>
+                  ЗАБРАТЬ 1500$ СЕЙЧАС!
+                  <span>💰</span>
+                </div>
+              </Button>
+              
+              <button
+                onClick={() => setShowExitModal(false)}
+                className="w-full text-white/70 hover:text-white transition-colors text-sm py-2 underline"
+              >
+                Нет, спасибо. Я не хочу выигрывать деньги
+              </button>
+            </div>
+
+            {/* Дополнительные эффекты */}
+            <div className="absolute -top-2 -left-2 w-8 h-8 bg-gaming-gold rounded-full animate-ping opacity-50"></div>
+            <div className="absolute -top-2 -right-2 w-8 h-8 bg-gaming-neon-pink rounded-full animate-ping opacity-50" style={{ animationDelay: '0.5s' }}></div>
+            <div className="absolute -bottom-2 -left-2 w-8 h-8 bg-gaming-neon-cyan rounded-full animate-ping opacity-50" style={{ animationDelay: '1s' }}></div>
+            <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-gaming-gold rounded-full animate-ping opacity-50" style={{ animationDelay: '1.5s' }}></div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
