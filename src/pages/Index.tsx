@@ -68,7 +68,7 @@ export default function Index() {
         <div className="flex flex-col lg:grid lg:grid-cols-2 gap-4 md:gap-8 items-center">
           
           {/* Left Side - Characters */}
-          <div className="relative flex justify-center items-center order-2 lg:order-1">
+          <div className="relative flex justify-center items-center order-1 lg:order-1">
             <div className="relative">
               <img 
                 src="/img/9f7ab38c-817b-4c3a-9ced-045ca7d31a0a.jpg" 
@@ -90,7 +90,7 @@ export default function Index() {
           </div>
 
           {/* Right Side - Registration Form */}
-          <div className="space-y-4 md:space-y-6 order-1 lg:order-2 w-full">
+          <div className="space-y-4 md:space-y-6 order-2 lg:order-2 w-full">
             {/* Bonus Banner */}
             <div className="text-center mb-4 md:mb-8">
               <h1 className="text-2xl md:text-4xl font-bold text-foreground mb-2 tracking-wider">
