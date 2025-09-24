@@ -324,9 +324,9 @@ export default function Index() {
                       <div className="animate-bounce">
                         <button 
                           onClick={() => {
-                            const form = document.querySelector('form');
-                            if (form) {
-                              form.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                            const bonusButton = document.getElementById('bonus-button');
+                            if (bonusButton) {
+                              bonusButton.scrollIntoView({ behavior: 'smooth', block: 'center' });
                             }
                           }}
                           className="bg-gaming-gold-bright text-black px-4 py-2 rounded-full font-bold text-sm md:text-base shadow-lg animate-pulse hover:scale-110 transition-transform cursor-pointer"
@@ -464,6 +464,7 @@ export default function Index() {
                 </div>
 
                 <Button
+                  id="bonus-button"
                   onClick={handleSubmit}
                   className="w-full bg-gradient-to-r from-gaming-gold to-gaming-gold-bright text-black font-black text-base md:text-lg py-4 md:py-6 hover:scale-105 transition-transform animate-glow animate-pulse"
                   disabled={isSubmitted}
