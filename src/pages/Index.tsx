@@ -221,7 +221,11 @@ export default function Index() {
                       ЗАЯВКА ОТПРАВЛЕНА!
                     </div>
                   ) : (
-                    'ЗАБРАТЬ БОНУС'
+                    <div className="flex items-center justify-center gap-2">
+                      <span>💰</span>
+                      ЗАБРАТЬ БОНУС
+                      <span>💸</span>
+                    </div>
                   )}
                 </Button>
 
