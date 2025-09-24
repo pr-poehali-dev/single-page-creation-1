@@ -104,9 +104,18 @@ export default function Index() {
                         <div key={i} className="w-2 h-2 md:w-3 md:h-3 bg-gaming-gold-bright rounded-full animate-pulse" />
                       ))}
                     </div>
-                    <h2 className="text-3xl md:text-5xl font-black text-gaming-gold-bright tracking-widest mb-3">
+                    <h2 className="text-3xl md:text-5xl font-black text-gaming-gold-bright tracking-widest mb-2">
                       БОНУС <span className="text-2xl md:text-4xl">ДО</span> 1000$
                     </h2>
+                    
+                    {/* Акция с бесплатными вращениями */}
+                    <div className="bg-gaming-red-bright text-white px-3 py-2 rounded-lg mb-3 animate-pulse border-2 border-white">
+                      <div className="flex items-center justify-center gap-2 text-sm md:text-base font-bold">
+                        <span>🎰</span>
+                        <span>+ 100 БЕСПЛАТНЫХ ВРАЩЕНИЙ</span>
+                        <span>🎰</span>
+                      </div>
+                    </div>
                     
                     {/* Анимированный призыв */}
                     <div className="relative">
