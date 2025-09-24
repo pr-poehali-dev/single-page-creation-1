@@ -270,6 +270,25 @@ export default function Index() {
                         </div>
                       </div>
                     </div>
+                    
+                    {/* Живая лента выигрышей */}
+                    <div className="bg-black/80 border border-gaming-gold rounded-lg p-2 overflow-hidden">
+                      <div className="text-gaming-gold-bright text-xs font-bold mb-1 text-center">
+                        🔴 ПРЯМО СЕЙЧАС ВЫИГРЫВАЮТ:
+                      </div>
+                      <div className="relative h-16 overflow-hidden">
+                        <div className="absolute w-full animate-[slide_10s_linear_infinite]">
+                          <div className="space-y-1 text-xs text-white">
+                            <div>👤 Анна К. — выиграла 67,500₽ в Book of Dead</div>
+                            <div>👤 Максим Р. — выиграл 234,890₽ в Sweet Bonanza</div>
+                            <div>👤 Елена М. — выиграла 45,600₽ в Gates of Olympus</div>
+                            <div>👤 Дмитрий П. — выиграл 156,340₽ в Crazy Time</div>
+                            <div>👤 Светлана Б. — выиграла 89,750₽ в Razor Shark</div>
+                            <div>👤 Алексей К. — выиграл 312,450₽ в Mega Moolah</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
 

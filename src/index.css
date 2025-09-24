@@ -125,6 +125,15 @@
   }
 }
 
+@keyframes slide {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
 @keyframes sparkle {
   0%,
   100% {
