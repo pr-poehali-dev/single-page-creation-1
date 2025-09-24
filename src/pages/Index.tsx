@@ -105,7 +105,7 @@ export default function Index() {
                       ))}
                     </div>
                     <h2 className="text-3xl md:text-5xl font-black text-gaming-gold-bright tracking-widest">
-                      БОНУС <span className="text-2xl md:text-4xl">ДО</span> 3000$
+                      БОНУС <span className="text-2xl md:text-4xl">ДО</span> 1000$
                     </h2>
                   </div>
                 </Card>
