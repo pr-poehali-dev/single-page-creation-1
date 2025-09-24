@@ -71,7 +71,7 @@ export default function Index() {
           <div className="relative flex justify-center items-center">
             <div className="relative">
               <img 
-                src="/img/08d23deb-6f84-4ada-b4ac-7381bf04c2a1.jpg" 
+                src="/img/9f7ab38c-817b-4c3a-9ced-045ca7d31a0a.jpg" 
                 alt="Casino Dealer" 
                 className="w-64 h-96 object-cover rounded-2xl animate-glow"
               />
