@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card } from '@/components/ui/card';
@@ -16,6 +16,37 @@ export default function Index() {
   });
 
   const [isSubmitted, setIsSubmitted] = useState(false);
+  
+  // Таймер обратного отсчета
+  const [timeLeft, setTimeLeft] = useState({ hours: 2, minutes: 45, seconds: 17 });
+  
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeLeft(prev => {
+        let { hours, minutes, seconds } = prev;
+        
+        if (seconds > 0) {
+          seconds--;
+        } else if (minutes > 0) {
+          minutes--;
+          seconds = 59;
+        } else if (hours > 0) {
+          hours--;
+          minutes = 59;
+          seconds = 59;
+        } else {
+          // Перезапускаем таймер
+          hours = 2;
+          minutes = 45;
+          seconds = 17;
+        }
+        
+        return { hours, minutes, seconds };
+      });
+    }, 1000);
+    
+    return () => clearInterval(timer);
+  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -183,6 +214,37 @@ export default function Index() {
                       Не упусти свой шанс стать миллионером!<br/>
                       Жми кнопку и начинай выигрывать прямо сейчас!
                     </p>
+                  </div>
+                  
+                  {/* Таймер обратного отсчета */}
+                  <div className="bg-gradient-to-r from-gaming-red-bright to-gaming-red p-4 rounded-xl border-2 border-gaming-gold-bright animate-glow">
+                    <div className="text-center">
+                      <p className="text-white font-bold text-base md:text-lg mb-2">
+                        ⏰ ДО КОНЦА АКЦИИ ОСТАЛОСЬ: ⏰
+                      </p>
+                      <div className="flex justify-center items-center gap-2 text-gaming-gold-bright">
+                        <div className="bg-black/50 px-3 py-2 rounded-lg border border-gaming-gold">
+                          <span className="text-xl md:text-2xl font-black animate-pulse">
+                            {String(timeLeft.hours).padStart(2, '0')}
+                          </span>
+                          <div className="text-xs">ЧАСОВ</div>
+                        </div>
+                        <span className="text-xl font-bold animate-pulse">:</span>
+                        <div className="bg-black/50 px-3 py-2 rounded-lg border border-gaming-gold">
+                          <span className="text-xl md:text-2xl font-black animate-pulse">
+                            {String(timeLeft.minutes).padStart(2, '0')}
+                          </span>
+                          <div className="text-xs">МИНУТ</div>
+                        </div>
+                        <span className="text-xl font-bold animate-pulse">:</span>
+                        <div className="bg-black/50 px-3 py-2 rounded-lg border border-gaming-gold">
+                          <span className="text-xl md:text-2xl font-black animate-pulse text-gaming-red-bright">
+                            {String(timeLeft.seconds).padStart(2, '0')}
+                          </span>
+                          <div className="text-xs">СЕКУНД</div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                   
                   {/* Счетчик посетителей */}
