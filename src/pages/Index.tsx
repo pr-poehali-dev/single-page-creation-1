@@ -208,7 +208,7 @@ export default function Index() {
                 <p className="text-xs text-muted-foreground text-center">
                   *Условия и Положения
                 </p>
-              </form>
+              </div>
             </Card>
 
             {/* Social Login */}
