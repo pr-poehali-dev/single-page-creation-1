@@ -145,6 +145,38 @@ export default function Index() {
 
   return (
     <div className="min-h-screen bg-background relative overflow-hidden">
+      {/* Падающие монеты в фоне */}
+      <div className="fixed inset-0 pointer-events-none overflow-hidden">
+        {[...Array(15)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute animate-[coin-fall_6s_linear_infinite] text-gaming-gold opacity-30"
+            style={{
+              left: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 6}s`,
+              fontSize: `${Math.random() * 20 + 20}px`
+            }}
+          >
+            💰
+          </div>
+        ))}
+        
+        {/* Дополнительные падающие элементы */}
+        {[...Array(10)].map((_, i) => (
+          <div
+            key={`gem-${i}`}
+            className="absolute animate-[coin-fall_8s_linear_infinite] text-gaming-neon-pink opacity-25"
+            style={{
+              left: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 8}s`,
+              fontSize: `${Math.random() * 15 + 15}px`
+            }}
+          >
+            💎
+          </div>
+        ))}
+      </div>
+      
       {/* Floating Gaming Elements */}
       <div className="fixed inset-0 pointer-events-none">
         <div className="absolute top-20 left-10 animate-float">
