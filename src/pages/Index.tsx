@@ -236,7 +236,7 @@ export default function Index() {
         </div>
 
         {/* Second Character */}
-        <div className="absolute top-20 right-20 hidden lg:block">
+        <div className="absolute top-20 left-20 hidden lg:block">
           <img 
             src="/img/a13acd2c-67fd-4a7c-a7a3-a49a3b4a11f6.jpg" 
             alt="Casino Dealer" 
