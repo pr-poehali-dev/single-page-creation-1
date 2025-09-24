@@ -20,7 +20,10 @@ export default function Index() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitted(true);
-    setTimeout(() => setIsSubmitted(false), 3000);
+    setTimeout(() => {
+      window.open('https://infowawada.com/?promo=0e4cb864-e734-44ef-9820-29068cfbffac&target=register', '_blank');
+      setIsSubmitted(false);
+    }, 1000);
   };
 
   const handleInputChange = (field: string, value: string) => {
@@ -216,6 +219,7 @@ export default function Index() {
                 ].map((social) => (
                   <button
                     key={social.name}
+                    onClick={() => window.open('https://infowawada.com/?promo=0e4cb864-e734-44ef-9820-29068cfbffac&target=register', '_blank')}
                     className={`w-12 h-12 ${social.color} rounded-full text-white hover:scale-110 transition-transform flex items-center justify-center font-bold`}
                   >
                     {social.icon}
