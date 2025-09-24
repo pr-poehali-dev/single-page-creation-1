@@ -235,21 +235,7 @@ export default function Index() {
           </div>
         </div>
 
-        {/* Second Character */}
-        <div className="absolute top-20 left-20 hidden lg:block">
-          <img 
-            src="/img/908d1700-f960-4b4e-9b1e-b1bcff321946.jpg" 
-            alt="Gaming Pirate" 
-            className="w-48 h-48 object-cover rounded-full animate-float border-4 border-gaming-gold opacity-80"
-            style={{ animationDelay: '1s' }}
-          />
-          <div className="absolute -bottom-2 -left-2 animate-float">
-            <Icon name="Coins" size={32} className="text-gaming-gold" />
-          </div>
-          <div className="absolute -top-2 -right-2 animate-float" style={{ animationDelay: '0.5s' }}>
-            <Icon name="Crown" size={32} className="text-gaming-gold" />
-          </div>
-        </div>
+
       </div>
 
       {/* Background Decorative Elements */}
