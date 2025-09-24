@@ -174,6 +174,29 @@
   }
 }
 
+@keyframes spark-burst {
+  0% {
+    transform: translateY(-100px) scale(0) rotate(0deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+    transform: translateY(15vh) scale(1.5) rotate(180deg);
+  }
+  50% {
+    opacity: 0.8;
+    transform: translateY(50vh) scale(1) rotate(360deg);
+  }
+  85% {
+    opacity: 0.3;
+    transform: translateY(85vh) scale(0.5) rotate(540deg);
+  }
+  100% {
+    transform: translateY(100vh) scale(0) rotate(720deg);
+    opacity: 0;
+  }
+}
+
 @keyframes spin-slow {
   from {
     transform: rotate(0deg);

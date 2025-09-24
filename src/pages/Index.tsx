@@ -148,16 +148,34 @@ export default function Index() {
       {/* Падающие монеты в фоне */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden">
         {[...Array(15)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute animate-[coin-fall_6s_linear_infinite] text-gaming-gold opacity-30"
-            style={{
-              left: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 6}s`,
-              fontSize: `${Math.random() * 20 + 20}px`
-            }}
-          >
-            💰
+          <div key={i} className="absolute">
+            {/* Основная монета */}
+            <div
+              className="absolute animate-[coin-fall_6s_linear_infinite] text-gaming-gold opacity-30"
+              style={{
+                left: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 6}s`,
+                fontSize: `${Math.random() * 20 + 20}px`
+              }}
+            >
+              💰
+            </div>
+            
+            {/* Искры вокруг монеты */}
+            {[...Array(6)].map((_, sparkIndex) => (
+              <div
+                key={`spark-${i}-${sparkIndex}`}
+                className="absolute animate-[spark-burst_6s_linear_infinite] text-gaming-gold-bright opacity-60"
+                style={{
+                  left: `calc(${Math.random() * 100}% + ${Math.random() * 40 - 20}px)`,
+                  animationDelay: `${Math.random() * 6}s`,
+                  fontSize: '8px',
+                  transform: `translate(${Math.random() * 20 - 10}px, ${Math.random() * 20 - 10}px)`
+                }}
+              >
+                ✨
+              </div>
+            ))}
           </div>
         ))}
         
