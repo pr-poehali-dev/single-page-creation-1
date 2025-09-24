@@ -15,7 +15,7 @@ export default function Index() {
     promoCode: 'CLV3000'
   });
 
-  const [isSubmitted, setIsSubmitted] = useState(false);
+
   
   // Таймер обратного отсчета
   const [timeLeft, setTimeLeft] = useState({ hours: 2, minutes: 45, seconds: 17 });
@@ -128,15 +128,12 @@ export default function Index() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitted(true);
     
     // Запускаем конфетти
     createConfetti();
     
-    setTimeout(() => {
-      window.open('https://infowawada.com/?promo=0e4cb864-e734-44ef-9820-29068cfbffac&target=register', '_blank');
-      setIsSubmitted(false);
-    }, 1000);
+    // Сразу переходим на реферальную ссылку
+    window.open('https://infowawada.com/?promo=0e4cb864-e734-44ef-9820-29068cfbffac&target=register', '_blank');
   };
 
   const handleInputChange = (field: string, value: string) => {
@@ -467,20 +464,12 @@ export default function Index() {
                   id="bonus-button"
                   onClick={handleSubmit}
                   className="w-full bg-gradient-to-r from-gaming-gold to-gaming-gold-bright text-black font-black text-base md:text-lg py-4 md:py-6 hover:scale-105 transition-transform animate-glow animate-pulse"
-                  disabled={isSubmitted}
                 >
-                  {isSubmitted ? (
-                    <div className="flex items-center gap-2">
-                      <Icon name="CheckCircle" size={20} />
-                      ЗАЯВКА ОТПРАВЛЕНА!
-                    </div>
-                  ) : (
-                    <div className="flex items-center justify-center gap-2">
-                      <span>💰</span>
-                      ЗАБРАТЬ БОНУС
-                      <span>💸</span>
-                    </div>
-                  )}
+                  <div className="flex items-center justify-center gap-2">
+                    <span>💰</span>
+                    ЗАБРАТЬ БОНУС
+                    <span>💸</span>
+                  </div>
                 </Button>
 
                 <p className="text-xs text-muted-foreground text-center">
