@@ -78,6 +78,14 @@ export default function Index() {
               <div className="absolute -top-4 -right-4 animate-float">
                 <Icon name="Crown" size={48} className="text-gaming-gold" />
               </div>
+              
+              {/* Speech Bubble */}
+              <div className="absolute -top-20 -right-20 bg-white text-black px-4 py-3 rounded-2xl rounded-bl-none shadow-xl animate-pulse border-2 border-gaming-gold max-w-xs">
+                <p className="text-sm font-bold text-center">
+                  Не теряй возможность поднять кеш! 💰
+                </p>
+                <div className="absolute bottom-0 left-4 w-0 h-0 border-l-8 border-l-transparent border-r-8 border-r-transparent border-t-8 border-t-white"></div>
+              </div>
             </div>
           </div>
 
