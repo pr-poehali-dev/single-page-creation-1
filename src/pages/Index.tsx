@@ -51,7 +51,7 @@ export default function Index() {
       {/* Header */}
       <header className="relative z-10 flex justify-between items-center p-6">
         <div className="text-2xl font-bold text-primary animate-pulse-neon">
-          VODDS
+          VAVADA
           <span className="text-sm text-muted-foreground ml-2">THE SMARTER WAY TO BET</span>
         </div>
         <div className="flex gap-4">
