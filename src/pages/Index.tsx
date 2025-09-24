@@ -71,9 +71,9 @@ export default function Index() {
           <div className="relative flex justify-center items-center">
             <div className="relative">
               <img 
-                src="/img/a13acd2c-67fd-4a7c-a7a3-a49a3b4a11f6.jpg" 
+                src="/img/e5274ca4-539b-467c-9ea1-5e8e342c9d42.jpg" 
                 alt="Casino Dealer" 
-                className="w-80 h-80 object-cover rounded-full animate-glow"
+                className="w-96 h-80 object-cover rounded-2xl animate-glow"
               />
               <div className="absolute -top-4 -right-4 animate-float">
                 <Icon name="Crown" size={48} className="text-gaming-gold" />
