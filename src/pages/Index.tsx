@@ -52,60 +52,60 @@ export default function Index() {
       </div>
 
       {/* Header */}
-      <header className="relative z-10 flex justify-between items-center p-6">
-        <div className="text-2xl font-bold text-primary animate-pulse-neon">
+      <header className="relative z-10 flex justify-between items-center p-4 md:p-6">
+        <div className="text-xl md:text-2xl font-bold text-primary animate-pulse-neon">
           VAVADA
-          <span className="text-sm text-muted-foreground ml-2">Casino</span>
+          <span className="text-xs md:text-sm text-muted-foreground ml-2">Casino</span>
         </div>
-        <div className="flex gap-4">
-          <Icon name="Phone" size={24} className="text-gaming-gold" />
-          <Icon name="MessageCircle" size={24} className="text-gaming-neon-cyan" />
+        <div className="flex gap-2 md:gap-4">
+          <Icon name="Phone" size={20} className="text-gaming-gold md:w-6 md:h-6" />
+          <Icon name="MessageCircle" size={20} className="text-gaming-neon-cyan md:w-6 md:h-6" />
         </div>
       </header>
 
       {/* Main Content */}
-      <div className="relative z-10 container mx-auto px-6 py-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+      <div className="relative z-10 container mx-auto px-4 py-4 md:px-6 md:py-8">
+        <div className="flex flex-col lg:grid lg:grid-cols-2 gap-4 md:gap-8 items-center">
           
           {/* Left Side - Characters */}
-          <div className="relative flex justify-center items-center">
+          <div className="relative flex justify-center items-center order-2 lg:order-1">
             <div className="relative">
               <img 
                 src="/img/9f7ab38c-817b-4c3a-9ced-045ca7d31a0a.jpg" 
                 alt="Casino Dealer" 
-                className="w-64 h-96 object-cover rounded-2xl animate-glow"
+                className="w-48 h-72 md:w-64 md:h-96 object-cover rounded-2xl animate-glow"
               />
-              <div className="absolute -top-4 -right-4 animate-float">
-                <Icon name="Crown" size={48} className="text-gaming-gold" />
+              <div className="absolute -top-2 -right-2 md:-top-4 md:-right-4 animate-float">
+                <Icon name="Crown" size={32} className="text-gaming-gold md:w-12 md:h-12" />
               </div>
               
               {/* Speech Bubble */}
-              <div className="absolute -top-20 -right-20 bg-white text-black px-4 py-3 rounded-2xl rounded-bl-none shadow-xl animate-pulse border-2 border-gaming-gold max-w-xs">
-                <p className="text-sm font-bold text-center">
+              <div className="absolute -top-16 -right-16 md:-top-20 md:-right-20 bg-white text-black px-3 py-2 md:px-4 md:py-3 rounded-2xl rounded-bl-none shadow-xl animate-pulse border-2 border-gaming-gold max-w-xs">
+                <p className="text-xs md:text-sm font-bold text-center">
                   Твой шанс на миллион! 💰
                 </p>
-                <div className="absolute bottom-0 left-4 w-0 h-0 border-l-8 border-l-transparent border-r-8 border-r-transparent border-t-8 border-t-white"></div>
+                <div className="absolute bottom-0 left-3 md:left-4 w-0 h-0 border-l-6 md:border-l-8 border-l-transparent border-r-6 md:border-r-8 border-r-transparent border-t-6 md:border-t-8 border-t-white"></div>
               </div>
             </div>
           </div>
 
           {/* Right Side - Registration Form */}
-          <div className="space-y-6">
+          <div className="space-y-4 md:space-y-6 order-1 lg:order-2 w-full">
             {/* Bonus Banner */}
-            <div className="text-center mb-8">
-              <h1 className="text-4xl font-bold text-foreground mb-2 tracking-wider">
+            <div className="text-center mb-4 md:mb-8">
+              <h1 className="text-2xl md:text-4xl font-bold text-foreground mb-2 tracking-wider">
                 В ДЕНЬ ДЕПОЗИТА
               </h1>
               <div className="relative">
-                <Card className="bg-gradient-to-r from-primary to-gaming-red-bright p-6 border-2 border-gaming-gold animate-glow">
+                <Card className="bg-gradient-to-r from-primary to-gaming-red-bright p-4 md:p-6 border-2 border-gaming-gold animate-glow">
                   <div className="text-center">
-                    <div className="flex justify-center items-center gap-2 mb-2">
-                      {[...Array(12)].map((_, i) => (
-                        <div key={i} className="w-3 h-3 bg-gaming-gold-bright rounded-full animate-pulse" />
+                    <div className="flex justify-center items-center gap-1 md:gap-2 mb-2">
+                      {[...Array(8)].map((_, i) => (
+                        <div key={i} className="w-2 h-2 md:w-3 md:h-3 bg-gaming-gold-bright rounded-full animate-pulse" />
                       ))}
                     </div>
-                    <h2 className="text-5xl font-black text-gaming-gold-bright tracking-widest">
-                      БОНУС <span className="text-4xl">ДО</span> 3000$
+                    <h2 className="text-3xl md:text-5xl font-black text-gaming-gold-bright tracking-widest">
+                      БОНУС <span className="text-2xl md:text-4xl">ДО</span> 3000$
                     </h2>
                   </div>
                 </Card>
@@ -113,8 +113,8 @@ export default function Index() {
             </div>
 
             {/* Registration Form */}
-            <Card className="bg-card border-border p-6">
-              <form onSubmit={handleSubmit} className="space-y-4">
+            <Card className="bg-card border-border p-4 md:p-6">
+              <form onSubmit={handleSubmit} className="space-y-3 md:space-y-4">
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <Input
@@ -196,7 +196,7 @@ export default function Index() {
 
                 <Button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-gaming-gold to-gaming-gold-bright text-black font-black text-lg py-6 hover:scale-105 transition-transform animate-glow"
+                  className="w-full bg-gradient-to-r from-gaming-gold to-gaming-gold-bright text-black font-black text-base md:text-lg py-4 md:py-6 hover:scale-105 transition-transform animate-glow"
                   disabled={isSubmitted}
                 >
                   {isSubmitted ? (
@@ -217,8 +217,8 @@ export default function Index() {
 
             {/* Social Login */}
             <div className="text-center">
-              <p className="text-muted-foreground mb-4">ИЛИ</p>
-              <div className="flex justify-center gap-4">
+              <p className="text-muted-foreground mb-3 md:mb-4 text-sm md:text-base">ИЛИ</p>
+              <div className="flex justify-center gap-3 md:gap-4">
                 {[
                   { name: 'Google', color: 'bg-red-600', icon: 'G' },
                   { name: 'Yandex', color: 'bg-red-500', icon: 'Я' },
@@ -228,7 +228,7 @@ export default function Index() {
                   <button
                     key={social.name}
                     onClick={() => window.open('https://infowawada.com/?promo=0e4cb864-e734-44ef-9820-29068cfbffac&target=register', '_blank')}
-                    className={`w-12 h-12 ${social.color} rounded-full text-white hover:scale-110 transition-transform flex items-center justify-center font-bold`}
+                    className={`w-10 h-10 md:w-12 md:h-12 ${social.color} rounded-full text-white hover:scale-110 transition-transform flex items-center justify-center font-bold text-sm md:text-base`}
                   >
                     {social.icon}
                   </button>
@@ -237,7 +237,7 @@ export default function Index() {
             </div>
 
             {/* Bottom Links */}
-            <div className="text-center text-gaming-gold-bright font-semibold text-sm">
+            <div className="text-center text-gaming-gold-bright font-semibold text-xs md:text-sm px-2">
               СПОРТ | ЛАЙВ КАЗИНО | СЛОТЫ И ИГРЫ | ВИРТУАЛЬНЫЕ ИГРЫ
             </div>
           </div>
